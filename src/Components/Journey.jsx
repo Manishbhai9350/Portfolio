@@ -5,9 +5,12 @@ import JourneyPlane from "./JourneyPlane";
 import { useRef } from "react";
 import { useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
+import { UseProjects } from "../context/projects.context";
 
 const Journey = ({ scroll = 0, ZOffset = 0 }) => {
   const { Width } = useWindow();
+
+  const {Journey} = UseProjects()
 
   let PlanesGroupRef = useRef(null);
   let TargetPositionDiffZ = useRef(0);
@@ -17,10 +20,10 @@ const Journey = ({ scroll = 0, ZOffset = 0 }) => {
   let UZEase = useRef(0.1);
   let UZEaseID = useRef(null);
 
-  let TotalPlanes = 5;
+  let TotalPlanes = Journey;
   let ZDiff = 30;
   let OriginalZ = ZOffset + ZDiff * (TotalPlanes - 1);
-  let Planes = new Array(TotalPlanes).fill("Plane");
+  let Planes = new Array(TotalPlanes).fill("Journey");
 
   useEffect(() => {
     clearInterval(UZEaseID.current);

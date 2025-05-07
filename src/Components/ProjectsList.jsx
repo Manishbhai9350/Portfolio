@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const ProjectsList = () => {
-  const { Projects, setCurrentProject, CurrentProject } = UseProjects();
+  const { Projects, setCurrentProject, CurrentProject, setUCurrentTextureIdx } = UseProjects();
 
   const refs = useRef([]);
   const ListCon = useRef(null);
@@ -23,7 +23,7 @@ const ProjectsList = () => {
           gsap.to(refs.current[CurrentProject],{
             opacity:0
           })
-          setCurrentProject((CurrentProject+1)%Projects.length)
+          ChangeProject((CurrentProject+1)%Projects.length)
         }
       })
     }
@@ -42,6 +42,7 @@ const ProjectsList = () => {
     gsap.to(copy,{
       opacity:0
     })
+    setUCurrentTextureIdx(i)
     setCurrentProject(i)
   }
 

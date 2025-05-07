@@ -377,7 +377,7 @@ section.page3 {
 }
 
 footer.page4 {
-  min-height: 150vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -385,42 +385,6 @@ footer.page4 {
   align-items: center;
   gap: 3rem;
   padding: .4rem;
-  .skills-con {
-    width: 100%;
-    height: fit-content;
-    border-bottom: 1px solid #212121;
-    h1 {
-      font-size: 11vw;
-      width: fit-content;
-    }
-    .skills {
-      width: 100%;
-      flex: 1;
-      padding: 1rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: .5rem;
-      .skill {
-        width: fit-content;
-        height: fit-content;
-        padding: .5rem 1rem;
-        border: 1px solid #212121;
-        border-radius: 1px;
-        transition: all .2s ease;
-        cursor: pointer;
-        &:hover {
-          background: #212121;
-          color: white;
-        }
-        .icon {
-          height: 100%;
-          width: auto;
-        }
-      }
-    }
-  }
   .contact {
     width: 100%;
     /* flex: 1; */

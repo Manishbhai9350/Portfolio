@@ -6,6 +6,8 @@ export const ProjectsContext = createContext()
 
 const ProjectsProvider = ({children}) => {
     const [CurrentProject, setCurrentProject] = useState(0)
+    const [UCurrentTextureIdx, setUCurrentTextureIdx] = useState(0)
+    const [UPrevTextureIdx, setUPrevTextureIdx] = useState(0)
     const [Projects, setProjects] = useState([
         {
             name:'Image Inhancer',
@@ -122,9 +124,10 @@ const ProjectsProvider = ({children}) => {
             skill:"MATHEMATICS"
         },
     ])
-    
-    
-    return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills}} >
+
+    const [Journey, setJourney] = useState(18)
+
+    return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills, UCurrentTextureIdx, setUCurrentTextureIdx, UPrevTextureIdx, setUPrevTextureIdx, Journey}} >
         {children}
     </ProjectsContext.Provider>
 }

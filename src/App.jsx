@@ -33,15 +33,15 @@ function App() {
     if(!JourneyRef.current) return 
     ScrollTrigger.create({
       trigger:JourneyRef.current,
-      start:'top bottom',
-      end:`+=${5000}px`,
+      start:'top -50%',
+      end:`+=${22000}px`,
       scrub:true,
       onUpdate:({progress}) => setScroll(progress)
     })
     ScrollTrigger.create({
       trigger:JourneyRef.current,
       start:'top top',
-      end:`+=${6000}px`,
+      end:`+=${23000}px`,
       pin:true,
     })
 
@@ -110,7 +110,7 @@ function App() {
         </Canvas>
       </section>
       <footer className="page4">
-        <div className="skills-con">
+        {/* <div className="skills-con">
           <h1>Tech Skills</h1>
           <div className="skills">
             {
@@ -121,7 +121,7 @@ function App() {
               )
             }
           </div>
-        </div>
+        </div> */}
         <div className="contact">
           <h1>Have A Project In Mind</h1>
           <a className="talk">Let's Talk</a>

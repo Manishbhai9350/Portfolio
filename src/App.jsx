@@ -82,7 +82,7 @@ function App() {
             </div>
           </div>
           <div className="image">
-            <CanvasImage src="/Profile.png" />
+            <CanvasImage src="/Profile.jpg" />
           </div>
         </div>
       </section>
@@ -110,22 +110,10 @@ function App() {
         </Canvas>
       </section>
       <footer className="page4">
-        {/* <div className="skills-con">
-          <h1>Tech Skills</h1>
-          <div className="skills">
-            {
-              Skills.length !== 0 && (
-                Skills.map((skill,i) => (
-                  <Skill skill={skill.skill} key={skill.skill} />
-                ))
-              )
-            }
-          </div>
-        </div> */}
         <div className="contact">
           <h1>Have A Project In Mind</h1>
-          <a className="talk">Let's Talk</a>
-          <a href="#">developermanish@gmail.com</a>
+          <a target='_blank' href="mailto:developermanish93@gmail.com" className="talk">Let's Talk <span className='line'></span> </a>
+          <a target='_blank' href="mailto:developermanish93@gmail.com" >developermanish93@gmail.com</a>
         </div>
       </footer>
     </main>

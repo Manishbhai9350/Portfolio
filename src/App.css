@@ -405,13 +405,31 @@ footer.page4 {
       font-weight: 500;
     }
     a.talk {
+      height: fit-content;
       font-weight: 400;
       font-size: 14vw;
-      border-bottom: 1px solid #212121;
-      background: #212121;
-      color: white;
+      color: black;
       padding: .2rem 1rem;
       cursor: pointer;
+      position: relative;
+      z-index: 10;
+      border-bottom: none;
+      .line {
+        width: 100%;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: .3s all ease;
+      }
+      &:hover {
+        .line {
+          transform:scaleX(1)
+        }
+      }
     }
   }
 }

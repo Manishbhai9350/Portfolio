@@ -26,20 +26,8 @@ const ProjectsProvider = ({children}) => {
             img:'/Dynamic_Counter.png'            
         },
         {
-            name:'Smooth Page Reveal',
-            img:'/Smoth_Reveal.png'            
-        },
-        {
             name:'Art Gallery',
             img:'/Art_Gallery.png'            
-        },
-        {
-            name:'Horizontal Scroll',
-            img:'/Horizontal_Scroll.jpg'            
-        },
-        {
-            name:'Smooth Cards',
-            img:'/Smooth_Cards.jpg'            
         },
         {
             name:'Distorted Sphere',
@@ -125,7 +113,7 @@ const ProjectsProvider = ({children}) => {
         },
     ])
 
-    const [Journey, setJourney] = useState(18)
+    const [Journey, setJourney] = useState(16)
 
     return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills, UCurrentTextureIdx, setUCurrentTextureIdx, UPrevTextureIdx, setUPrevTextureIdx, Journey}} >
         {children}

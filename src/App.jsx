@@ -22,6 +22,8 @@ function App() {
   const JourneyRef = useRef(null);
   const LandingHeading = useRef(null);
 
+  const {CurrentProject,Projects:MyProjects}  = UseProjects()
+
   useGSAP(() => {
     if (!JourneyRef.current) return;
 
@@ -39,13 +41,6 @@ function App() {
       end: `+=23000px`,
       pin: true,
     });
-
-    const CurrentHeading = new SplitText(
-      LandingHeading.current.querySelector(".current-heading")
-    );
-    const UpcomingHeading = new SplitText(
-      LandingHeading.current.querySelector(".upcoming-heading")
-    );
 
     return () => {
       ScrollTrigger.getAll().forEach((e) => e.kill());
@@ -75,7 +70,7 @@ function App() {
                 innovation.
               </p>
               <div className="contact-btn">
-                <p>contact</p>
+                <a href='' >Hire Me</a>
               </div>
             </div>
           </div>
@@ -87,7 +82,7 @@ function App() {
 
       <section className="page2">
         <h1>
-          Projects{" "}
+          Projects &nbsp;
           <span className="arrow-right-down">
             <RiArrowDownLine size={30} />
           </span>
@@ -97,16 +92,20 @@ function App() {
             <ProjectsList />
           </Suspense>
           <div className="projects">
-            {/* <Suspense fallback={null}> */}
+            <Suspense fallback={null}>
               <Projects />
-            {/* </Suspense> */}
+            </Suspense>
             <div className="view-project">
-              <a>
-                View{" "}
+              {
+                CurrentProject && MyProjects && (
+              <a target='_blank' href={MyProjects[CurrentProject].live || ''}>
+                View &nbsp;
                 <span className="arrow-right-up">
                   <RiArrowDownLine size={17} />
                 </span>
               </a>
+                )
+              }
             </div>
           </div>
         </div>

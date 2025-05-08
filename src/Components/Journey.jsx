@@ -4,11 +4,12 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useFrame} from "@react-three/fiber";
 import { UseProjects } from "../context/projects.context";
+import { useTexture } from "@react-three/drei"
 
 const Journey = ({ scroll = 0, offset = 0 }) => {
   const { Width } = useWindow();
 
-  const {Journey} = UseProjects()
+  const {Journeys} = UseProjects()
 
   let PlanesGroupRef = useRef(null);
   let TargetPositionDiffZ = useRef(0);
@@ -18,10 +19,10 @@ const Journey = ({ scroll = 0, offset = 0 }) => {
   let UZEase = useRef(0.1);
   let UZEaseID = useRef(null);
 
-  let TotalPlanes = Journey;
+  let TotalPlanes = Journeys;
   let ZDiff = 30;
   let OriginalZ = offset + ZDiff * (TotalPlanes - 1);
-  let Planes = new Array(TotalPlanes).fill("Journey");
+  let Planes = new Array(TotalPlanes).fill("Journeys");
 
   useEffect(() => {
     clearInterval(UZEaseID.current);
@@ -84,5 +85,10 @@ const Journey = ({ scroll = 0, offset = 0 }) => {
     </group>
   );
 };
+
+useTexture.preload(
+  new Array(16).fill('__').map((_,i) => `/Journey/J${i+1}.jpg`)
+)
+
 
 export default Journey;

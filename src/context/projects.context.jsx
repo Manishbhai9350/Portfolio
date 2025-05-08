@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 
 export const ProjectsContext = createContext()
@@ -11,43 +11,53 @@ const ProjectsProvider = ({children}) => {
     const [Projects, setProjects] = useState([
         {
             name:'Image Inhancer',
-            img:'/Image_Inhancer.png'            
+            img:'/Image_Inhancer.png',
+            live:'https://image-inhancer.onrender.com/'    
         },
         {
             name:'Next JS Page Transition',
-            img:'/Next_Page_Transition.png'            
+            img:'/Next_Page_Transition.png',
+            live:'https://vercel.com/manishs-projects-3877e99a/smooth-next-page-transition/6nEeRRyD35eMEKFB7JcJsWgND7Lh'
         },
         {
             name:'Modern Gallery',
-            img:'/Smooth_Gallery.jpg'            
+            img:'/Smooth_Gallery.jpg',
+            live:'https://manishbhai9350.github.io/Smooth-Modern-Gallery/'
         },
         {
             name:'Dynamic Counter',
-            img:'/Dynamic_Counter.png'            
+            img:'/Dynamic_Counter.png',
+            live:'https://manishbhai9350.github.io/Dynamic-Counter/'
         },
         {
             name:'Art Gallery',
-            img:'/Art_Gallery.png'            
+            img:'/Art_Gallery.png',
+            live:'https://manishbhai9350.github.io/Art-Gallery/'          
         },
         {
             name:'Distorted Sphere',
-            img:'/Distorted_Sphere.png'            
+            img:'/Distorted_Sphere.png',
+            live:'https://distorted-sphere.onrender.com/'        
         },
         {
             name:'The Planets',
-            img:'/The_Plantes.jpg'            
+            img:'/The_Plantes.jpg',
+            live:'https://the-planets.onrender.com/'            
         },
         {
             name:'3D Image Slider',
-            img:'/3D_Image_Slider.png'            
+            img:'/3D_Image_Slider.png',
+            live:'https://shaders-3d-slider.onrender.com/'            
         },
         {
             name:'3D Drink Can',
-            img:'/3D_Can.png'            
+            img:'/3D_Can.png',
+            live:'https://threed-can.onrender.com/'            
         },
         {
             name:'Modern Shop Page',
-            img:'/Trendline.png'            
+            img:'/Trendline.png',
+            live:''            
         },
     ])
     const [Skills, setSkills] = useState([
@@ -113,9 +123,9 @@ const ProjectsProvider = ({children}) => {
         },
     ])
 
-    const [Journey, setJourney] = useState(16)
+    const [Journeys, setJourneys] = useState(16)
 
-    return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills, UCurrentTextureIdx, setUCurrentTextureIdx, UPrevTextureIdx, setUPrevTextureIdx, Journey}} >
+    return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills, UCurrentTextureIdx, setUCurrentTextureIdx, UPrevTextureIdx, setUPrevTextureIdx, Journeys}} >
         {children}
     </ProjectsContext.Provider>
 }

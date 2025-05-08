@@ -42,12 +42,11 @@ const ProjectsScene = ({ ProjectsLength = 5 }) => {
 
   useGSAP(() => {
     if(!MaterialRef.current) return 
+    gsap.killTweensOf(UProg)
     MaterialRef.current.uniforms.uFromText.value = Textures[UPrevTextureIdx]      
     MaterialRef.current.uniforms.uToText.value = Textures[UCurrentTextureIdx]      
-    gsap.fromTo(UProg,
-      {
-        current:0
-      },{
+    gsap.set(UProg,{current:0})
+    gsap.to(UProg,{
       current:2,
       duration:1,
       ease:'linear',

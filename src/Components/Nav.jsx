@@ -37,26 +37,25 @@ const Nav = () => {
     <nav>
       <div className="nav-1 nav-item">
         <div className="col">
-          <a>Dev Manish</a>
+          <p>Dev Manish</p>
         </div>
         <div className="col">
-          <a>Web Devloper</a>
+          <p>Web Devloper</p>
         </div>
       </div>
       <div className="nav-2 nav-item">
         <div className="col">
-          <a>work</a>
-          <a>github</a>
-          <a>contact</a>
+          <a href='' >github</a>
+          <a href='' >contact</a>
         </div>
         <div className="col">
-          <a>linkedin</a>
-          <a>instagram</a>
-          <a>email</a>
+          <a href='' >linkedin</a>
+          <a href='' >instagram</a>
+          <a href='' >email</a>
         </div>
       </div>
       <div className="nav-3 nav-item">
-        <a>India</a>
+        <p>India</p>
       </div>
     </nav>
   ) : (
@@ -69,37 +68,17 @@ const Nav = () => {
         <div className="nav-items-child">
         <div className="items">
           <div className="links">
-            <a href="">
             <div className="link">
               <div className="line"></div>
               <h1>01</h1>
               <div className="link-text">
-                home
+                Dev Manish
               </div>
             </div>
-            </a>
             <a href="">
             <div className="link">
               <div className="line"></div>
               <h1>02</h1>
-              <div className="link-text">
-                work
-              </div>
-            </div>
-            </a>
-            <a href="">
-            <div className="link">
-              <div className="line"></div>
-              <h1>03</h1>
-              <div className="link-text">
-                studio
-              </div>
-            </div>
-            </a>
-            <a href="">
-            <div className="link">
-              <div className="line"></div>
-              <h1>04</h1>
               <div className="link-text">
                 contact
               </div>
@@ -108,16 +87,25 @@ const Nav = () => {
             <a href="">
             <div className="link">
               <div className="line"></div>
-              <h1>05</h1>
+              <h1>03</h1>
               <div className="link-text">
-                twitter
+                github
               </div>
             </div>
             </a>
             <a href="">
             <div className="link">
               <div className="line"></div>
-              <h1>06</h1>
+              <h1>04</h1>
+              <div className="link-text">
+                linked in
+              </div>
+            </div>
+            </a>
+            <a href="">
+            <div className="link">
+              <div className="line"></div>
+              <h1>05</h1>
               <div className="link-text">
                 instagram
               </div>

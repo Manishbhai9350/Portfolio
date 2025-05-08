@@ -531,6 +531,10 @@ footer.page4 {
         h2 {
           font-size: 6vw;
           font-weight: 500;
+          .plus {
+            width: 20px!important;
+            height: 20px!important;
+          }
         }
         .description {
           width: 100%;

@@ -45,13 +45,12 @@ const Nav = () => {
       </div>
       <div className="nav-2 nav-item">
         <div className="col">
-          <a href='' >github</a>
-          <a href='' >contact</a>
+          <a target="_blank" href='https://www.linkedin.com/in/manish-dhaka-b01b1828b' >linkedin</a>
+          <a target="_blank" href='https://github.com/Manishbhai9350' >github</a>
         </div>
         <div className="col">
-          <a href='' >linkedin</a>
-          <a href='' >instagram</a>
-          <a href='' >email</a>
+          <a target="_blank" href='https://www.instagram.com/dev_manish_js?igsh=dm16azE4OTY1MGVy' >instagram</a>
+          <a target="_blank" href='mailto:developermanish93@gmail.com' >email</a>
         </div>
       </div>
       <div className="nav-3 nav-item">
@@ -75,7 +74,7 @@ const Nav = () => {
                 Dev Manish
               </div>
             </div>
-            <a href="">
+            <a href="mailto:developermanish93@gmail.com">
             <div className="link">
               <div className="line"></div>
               <h1>02</h1>
@@ -84,7 +83,7 @@ const Nav = () => {
               </div>
             </div>
             </a>
-            <a href="">
+            <a target="_blank" href="https://github.com/Manishbhai9350">
             <div className="link">
               <div className="line"></div>
               <h1>03</h1>
@@ -93,7 +92,7 @@ const Nav = () => {
               </div>
             </div>
             </a>
-            <a href="">
+            <a target="_blank" href="https://www.linkedin.com/in/manish-dhaka-b01b1828b">
             <div className="link">
               <div className="line"></div>
               <h1>04</h1>
@@ -102,7 +101,7 @@ const Nav = () => {
               </div>
             </div>
             </a>
-            <a href="">
+            <a target="_blank" href="https://www.instagram.com/dev_manish_js?igsh=dm16azE4OTY1MGVy">
             <div className="link">
               <div className="line"></div>
               <h1>05</h1>

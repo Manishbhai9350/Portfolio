@@ -2,7 +2,7 @@ import { RiArrowDownLine } from "@remixicon/react";
 import "./App.css";
 import Nav from "./Components/Nav";
 import { Canvas } from "@react-three/fiber";
-import { useState, useRef, lazy, Suspense } from "react";
+import { useState, useRef, lazy, Suspense, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -22,7 +22,14 @@ function App() {
   const JourneyRef = useRef(null);
   const LandingHeading = useRef(null);
 
+
+  const ProjectViewCurrent = useRef(null)
+  const ProjectViewUpcoming = useRef(null)
+
   const {CurrentProject,Projects:MyProjects}  = UseProjects()
+
+
+
 
   useGSAP(() => {
     if (!JourneyRef.current) return;
@@ -47,6 +54,8 @@ function App() {
     };
   });
 
+  
+
   return (
     <main>
       <Nav />
@@ -70,7 +79,7 @@ function App() {
                 innovation.
               </p>
               <div className="contact-btn">
-                <a href='' >Hire Me</a>
+                <a target="_blank" href='mailto:developermanish93@gmail.com' >Hire Me</a>
               </div>
             </div>
           </div>
@@ -96,16 +105,12 @@ function App() {
               <Projects />
             </Suspense>
             <div className="view-project">
-              {
-                CurrentProject && MyProjects && (
-              <a target='_blank' href={MyProjects[CurrentProject].live || ''}>
+              <a target='_blank' ref={ProjectViewCurrent}  href={MyProjects[CurrentProject].live || ''}>
                 View &nbsp;
                 <span className="arrow-right-up">
                   <RiArrowDownLine size={17} />
                 </span>
               </a>
-                )
-              }
             </div>
           </div>
         </div>

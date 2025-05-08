@@ -1,13 +1,11 @@
-import { Text } from "@react-three/drei";
-import React from "react";
 import useWindow from "../Hooks/useWindow";
 import JourneyPlane from "./JourneyPlane";
 import { useRef } from "react";
 import { useEffect } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame} from "@react-three/fiber";
 import { UseProjects } from "../context/projects.context";
 
-const Journey = ({ scroll = 0, ZOffset = 0 }) => {
+const Journey = ({ scroll = 0, offset = 0 }) => {
   const { Width } = useWindow();
 
   const {Journey} = UseProjects()
@@ -22,7 +20,7 @@ const Journey = ({ scroll = 0, ZOffset = 0 }) => {
 
   let TotalPlanes = Journey;
   let ZDiff = 30;
-  let OriginalZ = ZOffset + ZDiff * (TotalPlanes - 1);
+  let OriginalZ = offset + ZDiff * (TotalPlanes - 1);
   let Planes = new Array(TotalPlanes).fill("Journey");
 
   useEffect(() => {
@@ -76,7 +74,7 @@ const Journey = ({ scroll = 0, ZOffset = 0 }) => {
         <JourneyPlane
           key={i}
           idx={i}
-          ZOffset={ZOffset}
+          offset={offset}
           scroll={scroll}
           last={i == Planes.length - 1}
           DeltaZ={DeltaZ}

@@ -4,14 +4,14 @@ import JourneyPlaneMaterial from './JourneyPlaneMaterial';
 import useWindow from "../Hooks/useWindow";
 import { useTexture } from "@react-three/drei";
 
-const JourneyPlane = ({ idx = 0, ZDiff = 0, scroll = 0,ZOffset, last = false, DeltaZ = { current: 0 } }) => {
+const JourneyPlane = ({ idx = 0, ZDiff = 0, scroll = 0,offset=0, last = false, DeltaZ = { current: 0 } }) => {
   const { Width} = useWindow();
   const { width, height } = useThree((v) => v.viewport);
   let aspect = 1.4;
   let PHeight = height * 0.5;
   let PWidth = PHeight * aspect;
 
-  let OriginalZ = -idx * ZDiff - ZOffset;
+  let OriginalZ = -idx * ZDiff - offset;
 
   let GroupRef = useRef(null);
   let position = useRef([0, 0, 0]);

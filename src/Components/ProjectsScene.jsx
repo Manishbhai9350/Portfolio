@@ -44,9 +44,6 @@ const ProjectsScene = ({ ProjectsLength = 5 }) => {
     if(!MaterialRef.current) return 
     MaterialRef.current.uniforms.uFromText.value = Textures[UPrevTextureIdx]      
     MaterialRef.current.uniforms.uToText.value = Textures[UCurrentTextureIdx]      
-    console.clear()
-    console.log(UPrevTextureIdx,'from')
-    console.log(UCurrentTextureIdx,'to')
     gsap.fromTo(UProg,
       {
         current:0

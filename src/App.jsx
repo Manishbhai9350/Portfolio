@@ -31,7 +31,10 @@ function App() {
 
 
   useGSAP(() => {
+
     if (!JourneyRef.current) return;
+
+
 
     ScrollTrigger.create({
       trigger: JourneyRef.current,
@@ -48,6 +51,10 @@ function App() {
       pin: true,
     });
 
+
+
+
+
     return () => {
       ScrollTrigger.getAll().forEach((e) => e.kill());
     };
@@ -58,10 +65,9 @@ function App() {
   return (
     <main>
       <Nav />
-
       <section className="page1">
-        <div ref={LandingHeading} className="heading">
-          <h1 className="current-heading">Developer Manish</h1>
+        <div className="heading">
+          <h1 ref={LandingHeading} className="heading-text">Developer Manish</h1>
         </div>
         <div className="about">
           <div className="content">

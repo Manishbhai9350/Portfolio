@@ -222,6 +222,16 @@ img {
   object-fit: cover;
 }
 
+.loader {
+  width: 100vw;
+  height: 100svh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #212121;
+  z-index: 9999;
+}
+
 
 section.page1 {
   padding: 1rem;

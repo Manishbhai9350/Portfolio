@@ -27,15 +27,12 @@ const Journey = ({ scroll = 0, offset = 0 }) => {
   useEffect(() => {
     clearInterval(UZEaseID.current);
     if (Width < 800) {
-      UZEaseID.current = setTimeout(() => {
-        UZEase.current = 0.3;
-      }, 100);
-      UZEase.current = 0.5;
+      UZEase.current = 0.3;
     } else {
       UZEaseID.current = setTimeout(() => {
         UZEase.current = 0.1;
       }, 100);
-      UZEase.current = 0.7;
+      UZEase.current = 0.3;
     }
     return () => {
       clearInterval(UZEaseID.current);

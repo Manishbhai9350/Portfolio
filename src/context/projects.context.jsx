@@ -122,6 +122,7 @@ const ProjectsProvider = ({children}) => {
             skill:"MATHEMATICS"
         },
     ])
+    const [setIsLoaded, setSetIsLoaded] = useState(false)
 
     const [Journeys, setJourneys] = useState(16)
 

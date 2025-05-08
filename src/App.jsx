@@ -24,7 +24,6 @@ function App() {
 
 
   const ProjectViewCurrent = useRef(null)
-  const ProjectViewUpcoming = useRef(null)
 
   const {CurrentProject,Projects:MyProjects}  = UseProjects()
 
@@ -63,7 +62,6 @@ function App() {
       <section className="page1">
         <div ref={LandingHeading} className="heading">
           <h1 className="current-heading">Developer Manish</h1>
-          <h1 className="upcoming-heading">Developer Manish</h1>
         </div>
         <div className="about">
           <div className="content">

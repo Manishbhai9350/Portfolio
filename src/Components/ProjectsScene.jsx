@@ -88,17 +88,14 @@ const ProjectsScene = ({ ProjectsLength = 5 }) => {
 export default ProjectsScene;
 
 useTexture.preload([
-    "/Image_Inhancer.png",
-    "/Next_Page_Transition.png",
-    "/Smooth_Gallery.png",
-    "/Dynamic_Counter.png",
-    "/Smoth_Reveal.png",
-    "/Art_Gallery.png",
-    "/Horizontal_Scroll.png",
-    "/Smooth_Cards.png",
-    "/Distorted_Sphere.png",
-    "/The_Plantes.png",
-    "/3D_Image_Slider.png",
-    "/3D_Can.png",
-    "/Trendline.png",
+    '/Image_Inhancer.png',
+    '/Next_Page_Transition.png',
+   '/Smooth_Gallery.jpg',
+    '/Dynamic_Counter.png',
+    '/Art_Gallery.png',
+    '/Distorted_Sphere.png',
+    '/The_Plantes.jpg',
+    '/3D_Image_Slider.png' ,
+    '/3D_Can.png'  ,
+    '/Trendline.png' ,
 ])

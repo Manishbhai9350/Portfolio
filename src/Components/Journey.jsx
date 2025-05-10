@@ -7,6 +7,7 @@ import { UseProjects } from "../context/projects.context";
 import { useTexture } from "@react-three/drei"
 
 const Journey = ({ scroll = 0, offset = 0 }) => {
+
   const { Width } = useWindow();
 
   const {Journeys} = UseProjects()

@@ -9,7 +9,18 @@ const App = () => {
   const progressRef = useRef(0);
 
   useEffect(() => {
-    console.log(Progress)
+    
+    console.log('Arre Yaar App Yaha Kaha 🥹🥹')
+    console.log('Koi Dikkat Ho To Mujhse Puch Sakte Ho 👋👋')
+    console.log('Yaa Aise Hi Kuch Baat Karni Ho To 💖💖')
+    console.log('Instagram Pe DM Ker Sakte Ho 😊😊')
+    return () => {
+      
+    }
+  }, [])
+  
+
+  useEffect(() => {
     if (Progress >= 100) {
       setIsSiteLoaded(true);
     }

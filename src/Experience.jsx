@@ -12,7 +12,8 @@ import { UseProjects } from "./context/projects.context";
 // Lazy-loaded components
 const Projects = lazy(() => import("./Components/Projects"));
 const ProjectsList = lazy(() => import("./Components/ProjectsList"));
-const Journey = lazy(() => import("./Components/Journey"));
+// const Journey = lazy(() => import("./Components/Journey"));
+import Journey from './Components/Journey'
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -100,7 +101,7 @@ function Experience() {
 
 
   useGSAP(() => {
-    if (!JourneyRef.current/*  || !IsSiteLoaded */) return;
+    if (!JourneyRef.current || !IsSiteLoaded) return;
     ScrollTrigger.create({
       trigger: JourneyRef.current,
       start: "top -50%",

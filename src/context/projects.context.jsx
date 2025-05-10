@@ -57,7 +57,7 @@ const ProjectsProvider = ({children}) => {
         {
             name:'Modern Shop Page',
             img:'/Trendline.png',
-            live:''            
+            live:'https://manishbhai9350.github.io/Modern-Shop/'            
         },
     ])
     const [Skills, setSkills] = useState([

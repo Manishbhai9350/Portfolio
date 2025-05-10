@@ -122,11 +122,11 @@ const ProjectsProvider = ({children}) => {
             skill:"MATHEMATICS"
         },
     ])
-    const [setIsLoaded, setSetIsLoaded] = useState(false)
+    const [IsSiteLoaded, setIsSiteLoaded] = useState(false)
 
     const [Journeys, setJourneys] = useState(16)
 
-    return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills, UCurrentTextureIdx, setUCurrentTextureIdx, UPrevTextureIdx, setUPrevTextureIdx, Journeys}} >
+    return <ProjectsContext.Provider value={{Projects, setProjects,CurrentProject, setCurrentProject, Skills, UCurrentTextureIdx, setUCurrentTextureIdx, UPrevTextureIdx, setUPrevTextureIdx, Journeys, IsSiteLoaded, setIsSiteLoaded}} >
         {children}
     </ProjectsContext.Provider>
 }

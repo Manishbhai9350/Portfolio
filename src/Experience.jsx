@@ -2,7 +2,7 @@ import { RiArrowDownLine } from "@remixicon/react";
 import "./App.css";
 import Nav from "./Components/Nav";
 import { Canvas } from "@react-three/fiber";
-import { useState, useRef, lazy } from "react";
+import { useState, useRef, lazy, Suspense } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -171,9 +171,13 @@ function Experience() {
           </span>
         </h1>
         <div className="projects-section">
+          <Suspense>
             <ProjectsList />
+          </Suspense>
           <div className="projects">
+            <Suspense>
               <Projects />
+            </Suspense>
             <div className="view-project">
               <a
                 target="_blank"
@@ -192,7 +196,9 @@ function Experience() {
 
       <section ref={JourneyRef} className="page3">
         <Canvas camera={{ near: 2 }}>
+          <Suspense>
             <Journey scroll={Scroll} offset={20} />
+          </Suspense>
         </Canvas>
       </section>
 

@@ -9,7 +9,7 @@ const App = () => {
   const progressRef = useRef(0);
 
   useEffect(() => {
-    
+    console.clear()
     console.log('Arre Yaar App Yaha Kaha 🥹🥹')
     console.log('Koi Dikkat Ho To Mujhse Puch Sakte Ho 👋👋')
     console.log('Yaa Aise Hi Kuch Baat Karni Ho To 💖💖')

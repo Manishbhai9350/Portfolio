@@ -166,7 +166,7 @@ function Experience() {
 
       <section className="page2">
         <h1>
-          Projects
+          Works
           <span className="arrow-right-down">
             <RiArrowDownLine size={30} />
           </span>

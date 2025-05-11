@@ -46,9 +46,10 @@ const ProjectsScene = ({ ProjectsLength = 5 }) => {
     MaterialRef.current.uniforms.uFromText.value = Textures[UPrevTextureIdx]      
     MaterialRef.current.uniforms.uToText.value = Textures[UCurrentTextureIdx]      
     gsap.set(UProg,{current:0})
+    MaterialRef.current.uniforms.uProg.value = UProg.current
     gsap.to(UProg,{
       current:1.1,
-      duration:1,
+      duration:.7,
       ease:'linear',
       onComplete(){
         gsap.set(UProg,{

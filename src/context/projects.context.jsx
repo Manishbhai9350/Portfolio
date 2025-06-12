@@ -60,68 +60,79 @@ const ProjectsProvider = ({children}) => {
             live:'https://manishbhai9350.github.io/Modern-Shop/'            
         },
     ])
-    const [Skills, setSkills] = useState([
+    const [Skills, setSkills] = useState({
+        core:[
         {
-            skill:"HTML"
+            skill:"HTML",
+            icon:'html'
         },
         {
-            skill:"CSS"
+            skill:"CSS",
+            icon:'css'
         },
         {
-            skill:"JS"
+            skill:"JAVASCRIPT",
+            icon:'javascript'
         },
         {
-            skill:"LENIS"
+            skill:"REACT",
+            icon:'react',
         },
         {
-            skill:"TAILWIND CSS"
+            skill:"NEXT JS",
+            icon:'nextjs',
+            scale:.5
         },
         {
-            skill:"LOCOMOTIVE"
+            skill:"GSAP",
+            icon:'gsap',
+            scale:.5
         },
         {
-            skill:"THREE JS"
+            skill:"THREE JS",
+            icon:'threejs',
         },
         {
-            skill:"WEBGL"
+            skill:"NODE JS",
+            icon:'nodejs',
+        },
+    ],
+    superstack:[
+        {
+            skill:"TYPESCRIPT",
+            icon:'typescript'
         },
         {
-            skill:"GLSL"
+            skill:"FRAMER MOTION",
+            icon:'framer-motion',
         },
         {
-            skill:"REACT"
+            skill:"WEBGL",
+            icon:'webgl',
         },
         {
-            skill:"NEXT JS"
+            skill:"REDUX",
+            icon:'redux',
         },
         {
-            skill:"NODE JS"
+            skill:"VERCEL",
+            icon:'vercel',
+            scale:.5
         },
         {
-            skill:"REACT THREE FIBER"
+            skill:"REDIS",
+            icon:'redis',
         },
         {
-            skill:"EXPRESS JS"
+            skill:"MONGODB",
+            icon:'mongodb',
         },
         {
-            skill:"EJS"
+            skill:"MATHEMATICS",
+            icon:'math',
         },
-        {
-            skill:"SOCKET IO"
-        },
-        {
-            skill:"MONGODB"
-        },
-        {
-            skill:"MERN"
-        },
-        {
-            skill:"GIT & GITHUB"
-        },
-        {
-            skill:"MATHEMATICS"
-        },
-    ])
+    ]
+    })
     const [IsSiteLoaded, setIsSiteLoaded] = useState(false)
 
     const [Journeys, setJourneys] = useState(16)

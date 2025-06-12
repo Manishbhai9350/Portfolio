@@ -9,16 +9,14 @@ const App = () => {
   const progressRef = useRef(0);
 
   useEffect(() => {
-    console.clear()
-    console.log('Arre Yaar App Yaha Kaha 🥹🥹')
-    console.log('Koi Dikkat Ho To Mujhse Puch Sakte Ho 👋👋')
-    console.log('Yaa Aise Hi Kuch Baat Karni Ho To 💖💖')
-    console.log('Instagram Pe DM Ker Sakte Ho 😊😊')
-    return () => {
-      
-    }
-  }, [])
-  
+    console.clear();
+    console.log("Hey buddy, what brings you here? 🥹🥹");
+    console.log("If you're stuck or need help, feel free to ask me! 👋👋");
+    console.log("Or if you just feel like having a chat... 💖💖");
+    console.log("Slide into my DMs on Instagram 😊😊");
+
+    return () => {};
+  }, []);
 
   useEffect(() => {
     if (Progress >= 100) {
@@ -31,10 +29,10 @@ const App = () => {
       <Loader
         dataInterpolation={(e) => {
           if (Math.round(progressRef.current) !== Math.round(e)) {
-            progressRef.current = e
-            setProgress(e)
+            progressRef.current = e;
+            setProgress(e);
           }
-          return `${Math.round(e)}%`
+          return `${Math.round(e)}%`;
         }}
         containerStyles={{
           position: "fixed",

@@ -116,7 +116,7 @@ const Nav = () => {
             <div className="dot"></div>
             <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;India</h1>
           </div>
-            <h1>&copy;Web Develper</h1>
+            <h1>&copy;Web Developer</h1>
           </div>
         </div>
         </div>

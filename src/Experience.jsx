@@ -1,24 +1,24 @@
 import { RiArrowDownLine } from "@remixicon/react";
 import "./App.css";
 import Nav from "./Components/Nav";
-import { Canvas } from "@react-three/fiber";
 import { useState, useRef, lazy, Suspense } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { UseProjects } from "./context/projects.context";
+import Skills from './Components/Skills'
 
 // Lazy-loaded components
 const Projects = lazy(() => import("./Components/Projects"));
 const ProjectsList = lazy(() => import("./Components/ProjectsList"));
 // const Journey = lazy(() => import("./Components/Journey"));
 import Journey from './Components/Journey'
+import { Canvas } from "@react-three/fiber";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function Experience() {
-  const { Skills } = UseProjects();
   const [Scroll, setScroll] = useState(0);
   const JourneyRef = useRef(null);
   const Heading = useRef(null);
@@ -164,6 +164,7 @@ function Experience() {
         </div>
       </section>
 
+
       <section className="page2">
         <h1>
           Works
@@ -194,6 +195,9 @@ function Experience() {
           </div>
         </div>
       </section>
+
+      
+      <Skills />
 
       <section ref={JourneyRef} className="page3">
         <Canvas camera={{ near: 2 }}>

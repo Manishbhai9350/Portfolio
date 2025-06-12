@@ -424,7 +424,7 @@ section.skills {
     }
 
     .skill-box {
-      aspect-ratio:2;
+      aspect-ratio: 2;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -436,26 +436,15 @@ section.skills {
       transition: border 0.3s ease, transform 0.3s ease;
       position: relative;
       z-index: 0;
-      transition: all .3s ease-in;
-      &:hover {
-        background: #000;
-        .logo {
-          img {
-            filter: invert(1);
-          }
-        }
-        .skill-title {
-          opacity: 1;
-        }
-      }
+      transition: all 0.3s ease-in;
       .logo {
-        height:70px;
+        height: 70px;
         width: auto;
         img {
           height: 100%;
           width: auto;
           object-fit: cover;
-          transition: filter .3s ease-in;
+          transition: filter 0.3s ease-in;
         }
       }
       .skill-title {
@@ -463,11 +452,11 @@ section.skills {
         font-weight: 500;
         font-size: 1.3rem;
         position: absolute;
-        left:50%;
+        left: 50%;
         bottom: 10px;
         transform: translateX(-50%);
-        color: white;
-        opacity: 0;
+        color: black;
+        opacity: 1;
       }
     }
 
@@ -478,7 +467,7 @@ section.skills {
         .skill-box {
           width: 48vw;
           .skill-title {
-            font-size: .7rem;
+            font-size: 0.7rem;
             width: 100%;
           }
           .logo {
@@ -594,11 +583,28 @@ footer.page4 {
   }
 }
 
+@media (min-width: 1000px) {
+  .skill-box {
+    &:hover {
+      background: #000!important;
+      .logo {
+        img {
+          filter: invert(1);
+        }
+      }
+      .skill-title {
+        color: white!important;
+        opacity: 1;
+      }
+    }
+  }
+}
+
 @media (max-width: 800px) {
-  section.skills{
-    padding: .4rem;
+  section.skills {
+    padding: 0.4rem;
     .logo {
-      height: 50px!important;
+      height: 50px !important;
     }
   }
   section.page1 {
@@ -616,12 +622,12 @@ footer.page4 {
 }
 
 @media (max-width: 600px) {
-  section.skills{
+  section.skills {
     .skills-section {
-      padding: .1rem!important;
+      padding: 0.1rem !important;
       .skill-box {
         .logo {
-          scale:.5
+          scale: 0.5;
         }
       }
     }

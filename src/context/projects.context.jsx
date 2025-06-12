@@ -16,8 +16,7 @@ const ProjectsProvider = ({children}) => {
         },
         {
             name:'Next JS Page Transition',
-            img:'/Next_Page_Transition.png',
-            live:'https://vercel.com/manishs-projects-3877e99a/smooth-next-page-transition/6nEeRRyD35eMEKFB7JcJsWgND7Lh'
+            img:'/Next_Page_Transition.png',        live:'https://smooth-next-page-transitio-git-41fa88-manishs-projects-3877e99a.vercel.app/projects/fashion'
         },
         {
             name:'Modern Gallery',

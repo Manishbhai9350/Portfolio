@@ -46,6 +46,7 @@ const Nav = () => {
       <div className="nav-2 nav-item">
         <div className="col">
           <a target="_blank" href='https://www.linkedin.com/in/manish-dhaka-b01b1828b' >linkedin</a>
+          <a target="_blank" href='https://x.com/dev_manish93' >X (twitter)</a>
           <a target="_blank" href='https://github.com/Manishbhai9350' >github</a>
         </div>
         <div className="col">

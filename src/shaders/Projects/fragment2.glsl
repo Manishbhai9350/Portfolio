@@ -2,13 +2,16 @@ varying vec2 vUv;
 
 uniform sampler2D uFromText;
 uniform sampler2D uToText;
+
 uniform float uProg;
 uniform float UGridCells;
 uniform float uTime;
+
 uniform vec2 uMouse;
+uniform float uMouseIntensity;
 
 // --------------------------------------------------
-// BOX SDF (aspect corrected)
+// BOX SDF
 // --------------------------------------------------
 float sdBox(vec2 p, vec2 b) {
   vec2 d = abs(p) - b;
@@ -54,11 +57,22 @@ float fbm(vec2 p) {
 // MAIN
 // --------------------------------------------------
 void main() {
+
   // --------------------------------------------------
-  // NOISE TRANSITION
+  // NOISE TRANSITION MASK
   // --------------------------------------------------
   float n = fbm(vUv * 3.0 + uProg * 0.6);
   float mask = 1.0 - smoothstep(uProg - 0.15, uProg + 0.15, n);
+
+  // --------------------------------------------------
+  // MOUSE BOX MASK (computed EARLY)
+  // --------------------------------------------------
+  vec2 p = vUv - uMouse;
+  vec2 boxSize = vec2(0.15, 0.15);
+  float d = sdBox(p, boxSize);
+
+  float boxMask = smoothstep(0.03, -0.03, d);
+  boxMask *= uMouseIntensity; // disable when mouse leaves plane
 
   // --------------------------------------------------
   // GRID FOR GLITCH OFFSET
@@ -73,14 +87,21 @@ void main() {
   float offsetWindow = smoothstep(0.4, 0.6, uProg) *
     (1.0 - smoothstep(0.7, 0.85, uProg));
 
-  // random direction per cell
-  vec2 dir = vec2(hash(cellId * 2.3) - 0.5, hash(cellId * 7.1) - 0.5);
+  // --------------------------------------------------
+  // TIME-ANIMATED GLITCH OFFSET
+  // --------------------------------------------------
+  float timeFlow = uTime * 0.6;
+
+  vec2 dir = vec2(hash(cellId * 2.3 + timeFlow) - 0.5, hash(cellId * 7.1 + timeFlow) - 0.5);
   dir = normalize(dir);
 
   vec2 glitchOffset = dir * offsetWindow * 0.15;
 
-  float glitchNoise = fbm(vUv * 40.0 + uProg * 5.0 + uTime);
+  float glitchNoise = fbm(vUv * 40.0 + uProg * 5.0 + uTime * 2.0);
   glitchOffset += (glitchNoise - 0.5) * 0.02;
+
+  // ❗ remove distortion inside mouse box
+  glitchOffset *= (1.0 - boxMask);
 
   vec2 uv = vUv + glitchOffset;
 
@@ -119,27 +140,33 @@ void main() {
   color.rgb -= scan;
 
   // --------------------------------------------------
-  // MOUSE BOX (FIXED ASPECT RATIO)
+  // LUMINANCE INSIDE MOUSE BOX
   // --------------------------------------------------
-  vec2 p = vUv - uMouse;
+  // vec3 LUMA = vec3(0.299, 0.587, 0.114);
+  // float luminance = dot(color.rgb, LUMA);
+  // vec3 dotColor = vec3(luminance);
 
-  // fix rectangle stretching
-  p.x *= (1.0); // if you pass resolution later, multiply by aspect here
-
-  vec2 boxSize = vec2(0.15, 0.15);
-  float d = sdBox(p, boxSize);
-
-  float boxMask = smoothstep(0.03, -0.03, d);
+  // color.rgb = mix(color.rgb, dotColor, boxMask);
 
   // --------------------------------------------------
-  // LUMINANCE MIX INSIDE BOX
-  // --------------------------------------------------
-  vec3 LUMA = vec3(0.299, 0.587, 0.114);
+// COLOR POP INSIDE MOUSE BOX (always visible)
+// --------------------------------------------------
 
-  float luminance = dot(color.rgb, LUMA);
-  vec3 dotColor = vec3(luminance);
+// contrast
+  vec3 contrasted = (color.rgb - 0.5) * 1.35 + 0.5;
 
-  color.rgb = mix(color.rgb, dotColor, boxMask);
+// saturation boost
+  float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+  vec3 saturated = mix(vec3(gray), contrasted, 1.6);
+
+// brightness lift
+  vec3 brightened = saturated + 0.08;
+
+// subtle sharpen feel using fake high-pass
+  vec3 sharpen = brightened + (brightened - color.rgb) * 0.6;
+
+// final mix inside box
+  color.rgb = mix(color.rgb, sharpen, boxMask);
 
   gl_FragColor = color;
 }

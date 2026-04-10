@@ -4,6 +4,7 @@ uniform sampler2D uFromText;
 uniform sampler2D uToText;
 uniform float uProg;
 uniform float UGridCells;
+uniform float uTime;
 
 void main(){
   float gridSize = UGridCells;

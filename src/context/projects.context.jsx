@@ -33,9 +33,9 @@ const ProjectsProvider = ({ children }) => {
       live: "https://distorted-sphere.onrender.com",
     },
     {
-      name: "The Planets",
+      name: "Scolling Boxes",
       img: "/The_Plantes.jpg",
-      live: "https://the-planets.onrender.com",
+      live: "https://scrolling-boxes.onrender.com",
     },
     {
       name: "3D Image Slider",

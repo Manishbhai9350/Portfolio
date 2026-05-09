@@ -34,7 +34,7 @@ const ProjectsProvider = ({ children }) => {
     },
     {
       name: "Scolling Boxes",
-      img: "/scrolling_boxes.png",
+      img: "/Scrolling_boxes.png",
       live: "https://scrolling-boxes.onrender.com",
     },
     {
